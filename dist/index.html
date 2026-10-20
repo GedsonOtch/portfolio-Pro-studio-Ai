@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProStudio AI - Création d'Affiches</title>
+    <link rel="stylesheet" href="./styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-950 text-gray-100">
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold gradient-text nav-brand">ProStudio AI</div>
+            <ul class="hidden md:flex gap-8 items-center">
+                <li><a href="#accueil" class="text-gray-700 hover:text-purple-600 transition dark:text-gray-300 dark:hover:text-purple-400">Accueil</a></li>
+                <li><a href="#portfolio" class="text-gray-700 hover:text-purple-600 transition dark:text-gray-300 dark:hover:text-purple-400">Portfolio</a></li>
+                <li><a href="#about" class="text-gray-700 hover:text-purple-600 transition dark:text-gray-300 dark:hover:text-purple-400">À propos</a></li>
+                <li><a href="#services" class="text-gray-700 hover:text-purple-600 transition dark:text-gray-300 dark:hover:text-purple-400">Services</a></li>
+                <li><a href="#testimonials" class="text-gray-700 hover:text-purple-600 transition dark:text-gray-300 dark:hover:text-purple-400">Avis</a></li>
+                <li><a href="#faq" class="text-gray-700 hover:text-purple-600 transition dark:text-gray-300 dark:hover:text-purple-400">FAQ</a></li>
+                <li><a href="#contact" class="text-gray-700 hover:text-purple-600 transition dark:text-gray-300 dark:hover:text-purple-400">Contact</a></li>
+                <li><a href="https://wa.me/22940288102" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg font-semibold transition nav-cta">Me Contacter</a></li>
+            </ul>
+            <button id="mobile-menu-button" aria-controls="mobile-menu" aria-expanded="false" class="md:hidden text-gray-200">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu (off-canvas from right) -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/60 hidden z-40"></div>
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-72 transform translate-x-full transition-transform duration-300 bg-slate-950 border-l border-gray-800 z-50 md:hidden">
+        <div class="relative px-6 pt-6 pb-6 h-full flex flex-col">
+            <button id="mobile-menu-close" class="absolute top-4 right-4 text-gray-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <!-- Header / Profile -->
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-600 to-blue-500 flex items-center justify-center text-white text-lg font-bold">M</div>
+                <div>
+                    <div class="text-lg font-bold text-white">Mohamed</div>
+                    <div class="text-sm text-gray-300">Créateur d'affiches</div>
+                </div>
+            </div>
+
+            <!-- Nav Links -->
+            <nav class="flex-1 flex flex-col gap-2">
+                <a href="#accueil" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-200 hover:bg-gray-800/50 hover:text-white transition">
+                    <i class="fas fa-home w-5"></i>
+                    <span>Accueil</span>
+                </a>
+                <a href="#portfolio" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-200 hover:bg-gray-800/50 hover:text-white transition">
+                    <i class="fas fa-images w-5"></i>
+                    <span>Portfolio</span>
+                </a>
+                <a href="#about" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-200 hover:bg-gray-800/50 hover:text-white transition">
+                    <i class="fas fa-user w-5"></i>
+                    <span>À propos</span>
+                </a>
+                <a href="#services" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-200 hover:bg-gray-800/50 hover:text-white transition">
+                    <i class="fas fa-concierge-bell w-5"></i>
+                    <span>Services</span>
+                </a>
+                <a href="#testimonials" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-200 hover:bg-gray-800/50 hover:text-white transition">
+                    <i class="fas fa-star w-5"></i>
+                    <span>Avis</span>
+                </a>
+                <a href="#faq" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-200 hover:bg-gray-800/50 hover:text-white transition">
+                    <i class="fas fa-question-circle w-5"></i>
+                    <span>FAQ</span>
+                </a>
+                <a href="#contact" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-200 hover:bg-gray-800/50 hover:text-white transition">
+                    <i class="fas fa-envelope w-5"></i>
+                    <span>Contact</span>
+                </a>
+
+            </nav>
+
+            <!-- CTA + Socials -->
+            <div class="mt-6">
+                <a href="#contact" class="block w-full text-center bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-lg font-semibold">Contactez-moi</a>
+                <div class="mt-4 flex items-center justify-center gap-6 text-gray-400">
+                    <a href="https://www.instagram.com/prostudio.ai.community?utm_source=qr&igsh=b24yNWIydmdlamdw" class="hover:text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="https://wa.me/22940288102" class="hover:text-white"><i class="fab fa-whatsapp fa-lg"></i></a>
+                    <a href="https://www.linkedin.com/in/prostudio-al-community-5030723aa?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="hover:text-white"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <!-- Replace the URL below with your image path or external URL -->
+    <section id="accueil" class="relative bg-cover bg-center bg-no-repeat py-20 md:py-32" style="background-image: url('./img/background.png');">
+        <!-- Stronger gradient overlay to darken and focus the image -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black/90"></div>
+        <div class="relative z-10 max-w-6xl mx-auto px-4 text-center text-white">
+            <div>
+                <h1 class="text-4xl md:text-6xl font-extrabold drop-shadow-2xl mb-6">
+                    Bienvenue chez <span class="text-purple-400">ProStudio AI</span>
+                </h1>
+                <p class="text-3xl md:text-4xl font-semibold drop-shadow-xl mb-6">
+                    Nous sommes specialisé en <span class="typing-text text-purple-300">création d'affiches</span>
+                </p>
+                <p class="text-lg text-gray-200 mb-8">
+                    Créez chez nous des designs modernes et percutants pour vos projets créatifs.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#portfolio" class="inline-flex w-full sm:w-auto justify-center bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 text-sm md:px-8 md:py-3 md:text-base rounded-lg font-semibold transition">Nos réalisations <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="https://wa.me/22940288102" class="inline-flex w-full sm:w-auto justify-center border-2 border-purple-600 text-purple-600 px-6 py-3 text-sm md:px-8 md:py-3 md:text-base rounded-lg font-semibold transition">Contactez-nous <i class="fas fa-phone-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 md:py-32 bg-white dark:bg-slate-950">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Nos Créations</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300">Découvrez nos dernières réalisations</p>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="portfolio-card slide-in-left delay-100 bg-white dark:bg-slate-900 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-800">
+                   <img src="./img/IMG-20260503-WA0034.jpg" alt="Affiche Concert" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Commande de nourriture</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Affiche moderne pour livraison de plats à saveurs uniques</p>
+                        <div class="flex gap-2">
+                            <span class="bg-pink-100 text-pink-700 dark:bg-pink-900/40 dark:text-pink-300 px-3 py-1 rounded-full text-sm font-semibold">Livraison</span>
+                            <span class="bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300 px-3 py-1 rounded-full text-sm font-semibold">2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="portfolio-card slide-in-right delay-200 bg-white dark:bg-slate-900 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-800">
+                   <img src="./img/IMG-20260503-WA0033.jpg" alt="Eco Campaign" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Produits consommables ou d'elevage</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Affiche pour promotion de produits consommables ou produits d'elevages</p>
+                        <div class="flex gap-2">
+                            <span class="bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300 px-3 py-1 rounded-full text-sm font-semibold">Vente</span>
+                            <span class="bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 px-3 py-1 rounded-full text-sm font-semibold">2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="portfolio-card slide-in-left delay-300 bg-white dark:bg-slate-900 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-800">
+                   <img src="./img/IMG-20260503-WA0037.jpg" alt="Summer Sale" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Formation Sérigraphie</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Affiche pour formation en sérigraphie</p>
+                        <div class="flex gap-2">
+                            <span class="bg-yellow-100 text-yellow-700 dark:bg-yellow-900/40 dark:text-yellow-300 px-3 py-1 rounded-full text-sm font-semibold">Formation</span>
+                            <span class="bg-orange-100 text-orange-700 dark:bg-orange-900/40 dark:text-orange-300 px-3 py-1 rounded-full text-sm font-semibold">2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 md:py-32 bg-gray-50 dark:bg-slate-950">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Nos Services</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300">Ce que nous pouvons créer pour vous</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card slide-in-left delay-100 bg-white dark:bg-slate-900 p-8 rounded-lg shadow-md transition text-center">
+                    <div class="service-icon print-icon mb-4"><i class="fas fa-print"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Réalisation d'affiches</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Concerts, conférences, festivals et événements</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card slide-in-right delay-200 bg-white dark:bg-slate-900 p-8 rounded-lg shadow-md transition text-center">
+                    <div class="service-icon video-icon mb-4"><i class="fas fa-video"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Montage vidéo professionnel</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Montage de vos videos youtube, Tik Tok et autres plateformes </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card slide-in-left delay-300 bg-white dark:bg-slate-900 p-8 rounded-lg shadow-md transition text-center">
+                    <div class="service-icon palette-icon mb-4"><i class="fas fa-palette"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Infographie et Design graphique</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Création d'illustrations, logos et matériel de communication</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card slide-in-right delay-400 bg-white dark:bg-slate-900 p-8 rounded-lg shadow-md transition text-center">
+                    <div class="service-icon bullhorn-icon mb-4"><i class="fas fa-bullhorn"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Publicité et Marketing digital</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Promotion de vos produits et services sur les réseaux sociaux et autres plateformes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 md:py-32 bg-white dark:bg-slate-950">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Découvrez les avis de nos clients</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300">Ce que disent ceux qui ont fait confiance à notre travail</p>
+            </div>
+            <!-- Testimonials Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 (Sénégal) -->
+                <div class="slide-in-left delay-100 bg-white dark:bg-slate-900 p-6 rounded-lg border border-gray-200 dark:border-gray-800 shadow-md hover:shadow-lg transition">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="avatar-initial">FN</div>
+                        <h3 class="font-bold text-gray-900 dark:text-white">Fatou NDIAYE</h3>
+                    </div>
+                    <div class="flex gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300">"Travail impeccable — l'affiche a parfaitement traduit l'ambiance de notre festival. Merci pour la réactivité et la créativité !"</p>
+                </div>
+
+                <!-- Testimonial 2 (Sénégal) -->
+                <div class="slide-in-right delay-200 bg-white dark:bg-slate-900 p-6 rounded-lg border border-gray-200 dark:border-gray-800 shadow-md hover:shadow-lg transition">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="avatar-initial">OD</div>
+                        <h3 class="font-bold text-gray-900 dark:text-white">Ousmane DIOP</h3>
+                    </div>
+                    <div class="flex gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300">"Excellente collaboration — le montage vidéo réalisé a transformé nos contenus pour les réseaux et augmenté l'engagement. Professionnalisme et sens du détail."</p>
+                </div>
+
+                <!-- Testimonial 3 (Sénégal) -->
+                <div class="slide-in-left delay-300 bg-white dark:bg-slate-900 p-6 rounded-lg border border-gray-200 dark:border-gray-800 shadow-md hover:shadow-lg transition">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="avatar-initial">AF</div>
+                        <h3 class="font-bold text-gray-900 dark:text-white">Awa FALL</h3>
+                    </div>
+                    <div class="flex gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300">"Design moderne et impactant — l'affiche a largement contribué à la visibilité de notre événement."</p>
+                </div>
+
+                <!-- Testimonial 4 (Bénin) -->
+                <div class="slide-in-right delay-400 bg-white dark:bg-slate-900 p-6 rounded-lg border border-gray-200 dark:border-gray-800 shadow-md hover:shadow-lg transition">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="avatar-initial">GO</div>
+                        <h3 class="font-bold text-gray-900 dark:text-white">Gédéon OTCHOUN</h3>
+                    </div>
+                    <div class="flex gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300">"Très satisfait — la stratégie de publicité et marketing digital a nettement boosté notre campagne et nos conversions. Bonne écoute et rapide."</p>
+                </div>
+
+                <!-- Testimonial 5 (Bénin) -->
+                <div class="slide-in-left delay-500 bg-white dark:bg-slate-900 p-6 rounded-lg border border-gray-200 dark:border-gray-800 shadow-md hover:shadow-lg transition">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="avatar-initial">HA</div>
+                        <h3 class="font-bold text-gray-900 dark:text-white">Hervé AGBEDO</h3>
+                    </div>
+                    <div class="flex gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300">"Créatif et professionnel — nous recommandons vivement pour tout support événementiel."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 md:py-32 bg-slate-950 text-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Ce qu'on nous demande souvent</h2>
+                <p class="text-xl text-slate-300">Trouvez rapidement les réponses à vos questions les plus fréquentes.</p>
+            </div>
+            <div class="space-y-4">
+                <article class="faq-item bg-slate-900/80 hover:text-purple-600 border border-slate-800 rounded-3xl overflow-hidden">
+                    <div class="w-full px-6 py-5 flex items-center justify-between text-left gap-4">
+                        <span class="text-base md:text-lg font-semibold">Comment commander une affiche personnalisée ?</span>
+                        <button type="button" class="faq-toggle h-7 w-7 md:h-7 md:w-7 rounded-lg bg-white text-white flex-shrink-0 flex items-center justify-center shadow-sm hover:bg-slate-100 hover:text-black">
+                            <i class="fas fa-chevron-down transition-transform duration-300 text-sm md:text-base "></i>
+                        </button>
+                    </div>
+                    <div class="faq-answer max-h-0 overflow-hidden px-6 pb-5 text-slate-300 transition-all duration-300">
+                        Vous pouvez me contacter par whatsapp via le CTA ou par email, puis nous discutons du concept, des couleurs et du format souhaité.
+                    </div>
+                </article>
+                <article class="faq-item bg-slate-900/80 hover:text-purple-600 border border-slate-800 rounded-3xl overflow-hidden">
+                    <div class="w-full px-6 py-5 flex items-center justify-between text-left gap-4">
+                        <span class="text-base md:text-lg font-semibold">Quels formats de fichiers fournissez-vous ?</span>
+                        <button type="button" class="faq-toggle h-7 w-7 md:h-7 md:w-7 rounded-lg bg-white text-white flex-shrink-0 flex items-center justify-center shadow-sm hover:bg-slate-100 hover:text-black">
+                            <i class="fas fa-chevron-down transition-transform duration-300 text-sm md:text-base"></i>
+                        </button>
+                    </div>
+                    <div class="faq-answer max-h-0 overflow-hidden px-6 pb-5 text-slate-300 transition-all duration-300">
+                        Nous fournissons des fichiers PSD, AI, PDF, PNG et JPG prêts à l'impression ou à la publication web.
+                    </div>
+                </article>
+                <article class="faq-item bg-slate-900/80 hover:text-purple-600 border border-slate-800 rounded-3xl overflow-hidden">
+                    <div class="w-full px-6 py-5 flex items-center justify-between text-left gap-4">
+                        <span class="text-base md:text-lg font-semibold">Quel est le délai de livraison ?</span>
+                        <button type="button" class="faq-toggle h-7 w-7 md:h-7 md:w-7 rounded-lg bg-white text-white flex-shrink-0 flex items-center justify-center shadow-sm hover:bg-slate-100 hover:text-black">
+                            <i class="fas fa-chevron-down transition-transform duration-300 text-sm md:text-base"></i>
+                        </button>
+                    </div>
+                    <div class="faq-answer max-h-0 overflow-hidden px-6 pb-5 text-slate-300 transition-all duration-300">
+                        Le délai varie selon le projet, généralement entre 3 et 7 jours  après validation du brief.
+                    </div>
+                </article>
+                <article class="faq-item bg-slate-900/80 hover:text-purple-600 border border-slate-800 rounded-3xl overflow-hidden">
+                    <div class="w-full px-6 py-5 flex items-center justify-between text-left gap-4">
+                        <span class="text-base md:text-lg font-semibold">Proposez-vous des révisions ?</span>
+                        <button type="button" class="faq-toggle h-7 w-7 md:h-7 md:w-7 rounded-lg  text-white flex-shrink-0 flex items-center justify-center shadow-sm hover:bg-slate-100 hover:text-black">
+                            <i class="fas fa-chevron-down transition-transform duration-300 text-sm md:text-base"></i>
+                        </button>
+                    </div>
+                    <div class="faq-answer max-h-0 overflow-hidden px-6 pb-5 text-slate-300 transition-all duration-300">
+                        Oui, nous proposons des révisions pour que l'affiche corresponde parfaitement à vos attentes.
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 md:py-32 bg-white dark:bg-slate-950">
+        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="about-image-frame relative rounded-3xl overflow-hidden shadow-2xl h-96 md:h-[30rem] bg-gray-100 dark:bg-slate-900 border border-gray-200 dark:border-gray-800">
+                    <img src="./img/file_000000000bc0720a8df350d34402e7f3.png" alt="Designer travaillant sur une affiche" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <div class="text-2xl font-bold">Mohamed Dangou</div>
+                        <p class="text-sm uppercase tracking-[0.2em] mb-2">Fondateur de ProStudio AI</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-6">À Propos de Nous</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-4">
+                    Depuis plus de  3 ans, nous créons des affiches remarquables et réalisons des montages de vidéos qui captent l'attention et véhiculent des messages puissants.
+                </p>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                    Notre équipe de designers passionnés et de monteurs video combine créativité, tendances actuelles et expertise technique pour transformer vos idées en réalité visuelle.
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-purple-50 dark:bg-purple-900/40 p-4 rounded-lg">
+                        <div class="text-3xl font-bold text-purple-600">100+</div>
+                        <p class="text-gray-600 dark:text-gray-300">Projets Réalisés</p>
+                    </div>
+                    <div class="bg-blue-50 dark:bg-blue-900/40 p-4 rounded-lg">
+                        <div class="text-3xl font-bold text-blue-600">50+</div>
+                        <p class="text-gray-600 dark:text-gray-300">Clients Satisfaits</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 md:py-32 bg-gradient-to-r from-purple-600 to-blue-600">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Commencez Votre Projet</h2>
+            <p class="text-xl text-purple-100 mb-12">
+                Discutons ensemble de votre prochain projet créatif
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white bg-opacity-10 backdrop-blur p-8 rounded-lg text-white">
+                    <div class="text-4xl mb-4"><i class="fas fa-envelope"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Email</h3>
+                    <p>mhmddangou@gmail.com</p>
+                </div>
+
+                <div class="bg-white bg-opacity-10 backdrop-blur p-8 rounded-lg text-white">
+                    <div class="text-4xl mb-4"><i class="fas fa-phone"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Téléphone</h3>
+                    <p> 01 61 02 14 42</p>
+                    <p> 01 64 22 15 27</p>
+                </div>
+
+                <div class="bg-white bg-opacity-10 backdrop-blur p-8 rounded-lg text-white">
+                    <div class="text-4xl mb-4"><i class="fa-solid fa-location-dot"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Adresse</h3>
+                    <p>Parakou, Bénin</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <form class="max-w-2xl mx-auto bg-white dark:bg-slate-900 rounded-lg p-8 shadow-xl">
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <input type="text" placeholder="Votre Nom" class="px-4 py-3 border border-gray-300 dark:border-gray-700 dark:bg-slate-950 dark:text-gray-100 rounded-lg focus:outline-none focus:border-purple-600 focus:ring-2 focus:ring-purple-500 focus:ring-opacity-20 transition">
+                    <input type="email" placeholder="Votre Email" class="px-4 py-3 border border-gray-300 dark:border-gray-700 dark:bg-slate-950 dark:text-gray-100 rounded-lg focus:outline-none focus:border-purple-600 focus:ring-2 focus:ring-purple-500 focus:ring-opacity-20 transition">
+                </div>
+                <input type="text" placeholder="Sujet du Projet" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 dark:bg-slate-950 dark:text-gray-100 rounded-lg mb-4 focus:outline-none focus:border-purple-600 focus:ring-2 focus:ring-purple-500 focus:ring-opacity-20 transition">
+                <textarea placeholder="Décrivez Votre Projet" rows="5" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 dark:bg-slate-950 dark:text-gray-100 rounded-lg mb-6 focus:outline-none focus:border-purple-600 focus:ring-2 focus:ring-purple-500 focus:ring-opacity-20 transition"></textarea>
+                <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 rounded-lg font-bold hover:shadow-lg transition">
+                    Envoyer le message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="text-2xl font-bold text-white mb-4 ">ProStudio AI</div>
+
+                    <p>Créer depuis 2022</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Navigation</h4>
+                    <ul class="space-y-3">
+                                                <li><a href="#portfolio" class="hover:text-white transition">Portfolio</a></li>
+                                                <li><a href="#services" class="hover:text-white transition">Services</a></li>
+                                                <li><a href="#testimonials" class="hover:text-white transition">Avis</a></li>
+                                                <li><a href="#faq" class="hover:text-white transition">FAQ</a></li>
+                                                <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+              
+                <div>
+                    <h4 class="text-white font-bold mb-4">Contactez-nous</h4>
+                    <div class="flex gap-4">
+                        <a href="https://wa.me/22940288102" class="hover:text-green-400 transition"><i class="fab fa-whatsapp text-3xl"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61589383954450" class="hover:text-blue-600 transition"><i class="fab fa-facebook text-3xl"></i></a>
+                        <a href="https://www.instagram.com/prostudio.ai.community?utm_source=qr&igsh=b24yNWIydmdlamdw" class="hover:text-red-600 transition"><i class="fab fa-instagram text-3xl"></i></a>
+                        <a href="https://www.linkedin.com/in/prostudio-al-community-5030723aa?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="hover:text-blue-700  transition"><i class="fab fa-linkedin text-3xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <p>&copy; 2026 ProStudio AI . Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" title="Remonter en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="./script.js" defer></script>
+</body>
+</html>
+
+          
